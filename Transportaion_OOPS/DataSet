@@ -1,0 +1,54 @@
+
+
+//dataSet
+
+id - 123
+name - a2z agency
+ticket - platinum
+price - 9000
+flight ? - true
+
+id -121
+name- des agency
+ticket- gold
+price-7000
+flight?- true
+
+id-144
+name-abiz agency
+ticket-silver
+price-5000
+flight?-false
+
+id-987
+name-afes agency
+ticket-diamond
+price-9999
+flight- false
+
+
+i/p Format:
+123
+a2z agency
+platinum
+9000
+true
+121
+des agency
+gold
+7000
+true
+144
+abiz agency
+silver
+5000
+false
+987
+afes agency
+diamond
+9999
+false
+
+
+987
+diamond
