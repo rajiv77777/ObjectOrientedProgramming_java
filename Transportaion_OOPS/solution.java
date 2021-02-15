@@ -17,6 +17,26 @@ public class solution {
 		 return highestPrice;
 	}
 	
+	//OBJECT RETURN TYPE //RawCode (this wont work)
+	public static Appliance getHiggestAmt(Appliance[] a,String ApplianceCatogery){
+		double amt=0;
+		int c=5;
+		for(int i=0;i<4;i++)
+		{
+			String s=a[i].getApplianceCatogery();
+			if(s.equals(ApplianceCatogery)){
+				double temp=a[i].getApplianceAmt();
+				if(temp>amt){
+					c=i;
+					amt=temp;
+				}
+			}
+		}
+		if(c==5){
+			return null;
+		}
+		return a[c];
+	}
 	public static String[] agencyDetailsForGivenIdAndType(TravelAgencies[] c1 ,int a,String s) 
 	{
 		String str1,str2;
