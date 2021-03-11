@@ -156,3 +156,112 @@ class Vote{
         return constituency;
     }
 }
+//scanner class 
+
+/******************************************************************************
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+*******************************************************************************/
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int invoiceNumber;
+	    String fromCity;
+	    String toCity;
+	    String orderDate;
+	    String deliveryDate;
+	    double price;
+	    Scanner sc= new Scanner(System.in);
+	    Package[] pack = new Package[5];
+	    for(int i=0;i<pack.length;i++)
+	    {
+	        invoiceNumber=sc.nextInt();
+	        sc.nextLine();
+	        fromCity =sc.nextLine();
+	        toCity=sc.nextLine();
+	        orderDate=sc.nextLine();
+	        deliveryDate=sc.nextLine();
+	        price=sc.nextDouble();
+	        pack[i] = new Package(invoiceNumber,fromCity,toCity,orderDate,deliveryDate,price);
+	    }
+	    String s;
+	    sc.nextLine(); 
+	    s=sc.nextLine();
+	    System.out.println(s);
+	    int n= countOrders(pack,s);
+	    if(n==0){
+	        System.out.println("nothing");
+	    }
+	    else{
+	        System.out.println(n);
+	    }
+	}
+	public static int countOrders(Package[] c , String s)
+	{
+	    int count=0;
+	    String temp1,temp2;
+	    int n1,n2,result;
+	    result=0;
+	    for(Package i:c)
+	    {
+	        System.out.println(i.getFromCity());
+	        if(i.getFromCity().equalsIgnoreCase(s))
+	        {
+	            temp1=i.getOrderDate().substring(0,2);
+	            temp2=i.getDeliveryDate().substring(0,2);
+	            n1=Integer.parseInt(temp1);
+	            n2=Integer.parseInt(temp2);
+	            result=n2-n1;
+	            if(result<=7)
+	            {
+	                count++;
+	            }
+	        }
+	    }
+	    return count;
+	}
+}
+class Package{
+    private int invoiceNumber;
+    private String fromCity;
+    private String toCity;
+    private String orderDate;
+    private String deliveryDate;
+    private double price;
+    public Package(int invoiceNumber,String fromCity,String toCity,String orderDate,String deliveryDate,double price)
+    {
+        this.invoiceNumber=invoiceNumber;
+        this.fromCity=fromCity;
+        this.toCity=toCity;
+        this.orderDate=orderDate;
+        this.deliveryDate=deliveryDate;
+        this.price=price;
+    }
+    public int getInvoiceNumber(){
+        return invoiceNumber;
+    }
+    public String getFromCity(){
+        return fromCity;
+    }
+    public String getToCity(){
+        return toCity;
+    }
+    public String getOrderDate(){
+        return orderDate;
+    }
+    public String getDeliveryDate(){
+        return deliveryDate;
+    }
+    public double getPrice(){
+        return price;
+    }
+    
+}
+
+
+
